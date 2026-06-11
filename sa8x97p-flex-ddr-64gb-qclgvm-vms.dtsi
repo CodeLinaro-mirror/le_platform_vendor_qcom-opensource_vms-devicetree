@@ -1,0 +1,31 @@
+// SPDX-License-Identifier: BSD-3-Clause
+/*
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+ */
+
+#include "sa8x97p-vms-qclv.dtsi"
+
+&soc {
+	gh-secure-vm-loader@1 {
+		memory-region = <&auto_vm_1_mem_0 &auto_vm_1_mem_1 &auto_vm_1_mem_2 &auto_vm_1_mem_3>;
+		shared-regions = <&vm_1_glink_cma_mem_1
+						&vm_1_glink_cma_mem_2
+						&vm_1_glink_cma_mem_3
+						&vm_1_glink_cma_mem_4
+						&vm_1_glink_cma_mem_5
+						&vm_1_glink_cma_mem_6
+						&vm_1_glink_cma_mem_7>;
+	};
+};
+
+&{/reserved-memory} {
+	auto_vm_1_mem_3: auto_vm_1_mem_3@BA9000000 {
+		no-map;
+		reg = <0xB 0xA9000000 0x1 0x00000000>; /*5410MB*/
+	};
+
+	auto_vm_1_mem_2: auto_vm_1_mem_2@8e50000000 {
+		no-map;
+		reg = <0x8E 0x50000000 0x1 0x7F400000>; /*6132MB*/
+	};
+};
