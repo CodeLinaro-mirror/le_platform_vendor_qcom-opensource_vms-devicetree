@@ -971,3 +971,23 @@
 &mmidgrp1900 {
 	remote-vmids = <2>;
 };
+
+&{/soc@0/bt-qca-auto-converged} {
+	status = "disabled";
+};
+
+&{/pci@0x4000000000} {
+	status = "disabled";
+};
+
+&{/pci@0x400000000} {
+	status = "disabled";
+};
+
+&{/soc@0/qcom,cnss-qca-converged} {
+	status = "disabled";
+};
+
+&{/soc@0/geniqup@8c0000/serial@88c000} {
+	status = "disabled";
+};

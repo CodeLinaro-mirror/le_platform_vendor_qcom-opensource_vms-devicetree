@@ -4,3 +4,31 @@
 */
 
 #include "sa8x97p-vms-lv.dtsi"
+
+&{/soc@0/scmi_uart17} {
+	status = "disabled";
+};
+
+&{/soc@0/scmi_bluetooth} {
+	status = "disabled";
+};
+
+&{/soc@0/scmi_bluetooth1} {
+	status = "disabled";
+};
+
+&{/soc@0/scmi_wlan} {
+	status = "disabled";
+};
+
+&{/soc@0/scmi_wlan1} {
+	status = "disabled";
+};
+
+&{/soc@0/scmi_pcie2} {
+	status = "disabled";
+};
+
+&{/soc@0/scmi_pcie3} {
+	status = "disabled";
+};
