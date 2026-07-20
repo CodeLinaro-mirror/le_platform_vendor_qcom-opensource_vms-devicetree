@@ -46,11 +46,11 @@
 
 	auto_vm_1_mem_2: auto_vm_1_mem_2@F90000000 {
 		no-map;
-		reg = <0xF 0x90000000 0x0 0x70000000>; /*1792MB*/
+		reg = <0xF 0x90000000 0x0 0x52200000>; /*1314MB*/
 	};
 
 	auto_vm_1_mem_3: auto_vm_1_mem_3@8AC0000000 {
 		no-map;
-		reg = <0x8A 0xC0000000 0x1 0x0EC00000>; /*4332MB*/
+		reg = <0x8A 0xC0000000 0x0 0xF2C00000>; /*3884MB*/
 	};
 };
