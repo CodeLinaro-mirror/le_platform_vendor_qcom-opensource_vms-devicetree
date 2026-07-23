@@ -1,0 +1,13 @@
+// SPDX-License-Identifier: BSD-3-Clause
+/*
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+ */
+
+/dts-v1/;
+/plugin/;
+
+#include "sa8x97p-flex-ddr-32gb-lagvm-vms.dtsi"
+
+/ {
+	compatible = "qcom,sa8x97p-flex-adp-star", "qcom,sa8x97p-flex-ride-sx";
+};
