@@ -1,0 +1,56 @@
+// SPDX-License-Identifier: BSD-3-Clause
+/*
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+ */
+
+#include "sa8x97p-vms-mgvm.dtsi"
+
+&soc {
+	gh-secure-vm-loader@0 {
+		memory-region = <&auto_vm_0_mem_0 &auto_vm_0_mem_1 &auto_vm_0_mem_2>;
+		shared-regions = <&vm_0_glink_cma_mem_1
+				&vm_0_glink_cma_mem_2
+				&vm_0_glink_cma_mem_3
+				&vm_0_glink_cma_mem_4
+				&vm_0_glink_cma_mem_5
+				&vm_0_glink_cma_mem_6
+				&vm_0_glink_cma_mem_7
+				&vm_cp_pixel
+				&vm_cp_nonpixel
+				&vm_cp_bitstream
+				&vm_cp_b_pt_mem
+				&vm_cp_p_pt_mem
+				&vm_cp_np_pt_mem
+				&soccp_fe_vm_1
+				&dice_vm_0_mem>;
+	};
+
+	gh-secure-vm-loader@1 {
+		memory-region = <&auto_vm_1_mem_0 &auto_vm_1_mem_1 &auto_vm_1_mem_2>;
+		shared-regions = <&vm_1_glink_cma_mem_1
+				&vm_1_glink_cma_mem_2
+				&vm_1_glink_cma_mem_3
+				&vm_1_glink_cma_mem_4
+				&vm_1_glink_cma_mem_5
+				&vm_1_glink_cma_mem_6
+				&vm_1_glink_cma_mem_7>;
+	};
+};
+
+&{/reserved-memory} {
+
+	auto_vm_0_mem_1: auto_vm_0_mem_1@BA9000000 {
+		no-map;
+		reg = <0xB 0xA9000000 0x4 0x57000000>; /* 17776MB */
+	};
+
+	auto_vm_0_mem_2: auto_vm_0_mem_2@8D80000000 {
+		no-map;
+		reg = <0x8D 0x80000000 0x4 0x00000000>; /* 16384MB */
+	};
+
+	auto_vm_1_mem_2: auto_vm_1_mem_2@9180000000 {
+		no-map;
+		reg = <0x91 0x80000000 0x6 0x50600000>; /* 25862MB */
+	};
+};

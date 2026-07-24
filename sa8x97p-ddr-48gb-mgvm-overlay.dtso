@@ -1,0 +1,18 @@
+// SPDX-License-Identifier: BSD-3-Clause
+/*
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+ */
+
+/dts-v1/;
+/plugin/;
+
+#include "sa8x97p-ddr-48gb-mgvm-vms.dtsi"
+
+/ {
+	compatible = "qcom,sa8x97p-ride-sx", "qcom,sa8x97p-qam-ride-sx";
+};
+
+&non_ecc_heap_mem {
+	reg = <0x88 0x00000000 0x2 0xC0000000>;
+	status = "okay";
+};

@@ -1,0 +1,26 @@
+// SPDX-License-Identifier: BSD-3-Clause
+/*
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+ *
+ * VMS DTB image layout header.
+ * Offsets are patched at build time by build_dtb_img (qcom-dtb-merge.bbclass).
+ * Each section is followed by a 64-byte pad (> sizeof fdt_header = 40 bytes)
+ * so the ABL DTB scan loop breaks cleanly at the section boundary.
+ *
+ * offset[n] = offset[n-1] + sizeof(section[n-1]) + 64
+ */
+
+/dts-v1/;
+
+/ {
+	compatible = "qcom,vms-dtb-header";
+	model = "Qualcomm VMS DTB image layout header";
+
+	vms-dtb-layout {
+		pvm-offset    = <0x0 0x0>;
+		lagvm-offset  = <0x0 0x0>;
+		mgvm-offset   = <0x0 0x0>;
+		lvgvm-offset  = <0x0 0x0>;  /* future */
+		qclgvm-offset = <0x0 0x0>;  /* future */
+	};
+};

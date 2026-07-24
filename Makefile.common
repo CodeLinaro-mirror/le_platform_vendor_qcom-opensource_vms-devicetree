@@ -1,0 +1,29 @@
+# SPDX-License-Identifier: GPL-2.0
+
+ARCH?=arm64
+LRH_ARCH?=aarch64
+
+TECHPACK_BINDING_DIR=$(PWD)
+TECHPACK_DTSTREE=$(TECHPACK_BINDING_DIR)
+
+KDIR ?= $(SRC_DIR_ROOT)/kernel/kernel_platform/kernel
+
+# Include paths: standard kernel paths + vms-devicetree itself (for dtsi)
+# oot-dt-bindings headers are installed to sysroot includedir by
+# kernel-basedevicetree and passed in via DTC_INCLUDE from the build system.
+TECHPACK_INCLUDE := $(KDIR)/scripts/dtc/include-prefixes
+TECHPACK_INCLUDE += $(KDIR)/include
+TECHPACK_INCLUDE += $(KDIR)/arch/$(ARCH)/boot/dts/qcom
+TECHPACK_INCLUDE += $(TECHPACK_BINDING_DIR)
+TECHPACK_INCLUDE += $(OOT_DT_BINDINGS_DIR)
+
+all: dtbos
+
+dtbos:
+	$(MAKE) -C $(KDIR) ARCH=$(ARCH) dtstree=$(TECHPACK_DTSTREE) \
+		DTC_INCLUDE="$(TECHPACK_INCLUDE)" DTC_FLAGS="-@" dtbs
+
+.PHONY: clean
+clean:
+	find  \( -name ".*.cmd" -o -name ".*.tmp" -o -name "*.dtb"  -o -name "*.dtbo" \) -delete
+	rm -rf oot
