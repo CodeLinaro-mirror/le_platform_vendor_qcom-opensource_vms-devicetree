@@ -32,3 +32,23 @@
 &{/soc@0/scmi_pcie3} {
 	status = "disabled";
 };
+
+&{/soc@0/bt-qca-auto-converged} {
+	status = "ok";
+};
+
+&{/pci@0x4000000000} {
+	status = "ok";
+	rasdp-off = <0x39C>;
+	safety-supported;
+	power-domains = <&scmi32_pd 0>;
+	power-domain-names = "power";
+};
+
+&{/soc@0/qcom,cnss-qca-converged} {
+	status = "ok";
+};
+
+&{/soc@0/geniqup@8c0000/serial@88c000} {
+	status = "ok";
+};
