@@ -1,0 +1,17 @@
+// SPDX-License-Identifier: BSD-3-Clause
+/*
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+ */
+
+/dts-v1/;
+/plugin/;
+
+#include "seca-ddr-48gb-lagvm-vms.dtsi"
+
+/ {
+	compatible = "qcom,seca-ride-sx", "qcom,seca-qam-ride-sx", "qcom,seca-adp-star";
+};
+
+&{/} {
+	qcom,sku-id = <0x0 0x200>;
+};

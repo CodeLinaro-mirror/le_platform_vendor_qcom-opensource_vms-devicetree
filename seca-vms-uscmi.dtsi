@@ -1,0 +1,179 @@
+// SPDX-License-Identifier: BSD-3-Clause
+/*
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+ */
+
+/* GVM-related SCMI nodes */
+
+&scmi1 {
+	status = "okay";
+};
+
+&scmi2 {
+	status = "okay";
+};
+
+&scmi11 {
+	status = "okay";
+};
+
+&scmi13 {
+	status = "okay";
+};
+
+&scmi14 {
+	status = "okay";
+};
+
+&scmi24 {
+	status = "okay";
+};
+
+&scmi25 {
+	status = "okay";
+};
+
+&scmi32 {
+	status = "okay";
+};
+
+&scmi33 {
+	status = "okay";
+};
+
+&scmi45 {
+	status = "okay";
+};
+
+&scmi46 {
+	status = "okay";
+};
+
+&scmi63 {
+	status = "okay";
+};
+
+&soc {
+	scmi_emac1 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi8_pd 0>, <&scmi8_pd 1>, <&scmi8_dvfs 0>, <&scmi8_dvfs 1>;
+		power-domain-names = "emac_power", "emac_clock", "emac_perf", "perf_5g_serdes";
+
+		resets = <&scmi8_rst 0>, <&scmi8_rst 1>;
+		reset-names = "emac_reset", "serdes_reset";
+
+		qcom,no-suspend;
+		qcom,dev-name = "scmi_emac1";
+	};
+
+	scmi_usb2 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi2_pd 0>, <&scmi2_pd 1>;
+		power-domain-names = "usb_transfer", "usb_core";
+
+		qcom,dev-name = "scmi_usb2";
+	};
+
+	scmi_usb2_phy2 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi14_pd 0>, <&scmi14_pd 1>;
+		power-domain-names = "usb_transfer", "usb_core";
+
+		qcom,dev-name = "scmi_usb2_phy2";
+	};
+
+	scmi_uart14 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi11_pd 14>, <&scmi11_dvfs 14>;
+		power-domain-names = "power", "perf";
+
+		qcom,dev-name = "scmi_uart14";
+	};
+
+	scmi_uart17 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi11_pd 17>, <&scmi11_dvfs 17>;
+		power-domain-names = "power", "perf";
+
+		qcom,dev-name = "scmi_uart17";
+	};
+
+	scmi_pcie2 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi32_pd 0>, <&scmi63_pd 0>;
+		power-domain-names = "power", "dummy";
+		qcom,no-suspend;
+		qcom,dev-name = "scmi_pcie2";
+	};
+
+	scmi_pcie3 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi33_pd 0>, <&scmi63_pd 0>;
+		power-domain-names = "power", "dummy";
+		qcom,no-suspend;
+		qcom,dev-name = "scmi_pcie3";
+	};
+
+	scmi_bluetooth {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi25_pd 0>, <&scmi25_pd 1>;
+		power-domain-names = "power_regulator", "power_gpio";
+		qcom,dev-name = "scmi_bluetooth";
+	};
+
+	scmi_bluetooth1 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi46_pd 0>, <&scmi46_pd 1>;
+		power-domain-names = "power_regulator", "power_gpio";
+		qcom,dev-name = "scmi_bluetooth1";
+	};
+
+	scmi_wlan {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi24_pd 0>, <&scmi24_pd 1>;
+		power-domain-names = "power_regulator", "power_gpio";
+		qcom,dev-name = "scmi_wlan";
+	};
+
+	scmi_wlan1 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi45_pd 0>, <&scmi45_pd 1>;
+		power-domain-names = "power_regulator", "power_gpio";
+		qcom,dev-name = "scmi_wlan1";
+	};
+
+	scmi_usb1 {
+		compatible = "qcom,uscmi";
+		power-domains = <&scmi1_pd 0>, <&scmi1_pd 1>;
+		power-domain-names = "usb_transfer", "usb_core";
+
+		qcom,dev-name = "scmi_usb1";
+	};
+
+	scmi_usb1_phy2 {
+		compatible = "qcom,uscmi";
+		power-domains = <&scmi13_pd 0>, <&scmi13_pd 1>;
+		power-domain-names = "usb_transfer", "usb_core";
+
+		qcom,dev-name = "scmi_usb1_phy2";
+	};
+
+	scmi_usb1_qmp {
+		compatible = "qcom,uscmi";
+		power-domains = <&scmi13_pd 2>, <&scmi13_pd 3>;
+		power-domain-names = "usb_transfer", "usb_core";
+
+		qcom,dev-name = "scmi_usb1_qmp";
+	};
+};
