@@ -3,7 +3,7 @@
  * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
  */
 
-#include "sa8797-vms-common.dtsi"
+#include "sa8x97p-vms-common.dtsi"
 
 &soc {
 	auto_vm1: qcom,auto_vm1@B63000000 {

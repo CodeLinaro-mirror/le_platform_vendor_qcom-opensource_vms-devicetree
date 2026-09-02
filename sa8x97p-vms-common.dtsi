@@ -3,8 +3,8 @@
 * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 */
 
-#ifndef _SA8797_VMS_COMMON_DTSI_
-#define _SA8797_VMS_COMMON_DTSI_
+#ifndef _SA8X97P_VMS_COMMON_DTSI_
+#define _SA8X97P_VMS_COMMON_DTSI_
 
 #include "oot-dt-bindings/qcom-shmem-sa8797p.h"
 
