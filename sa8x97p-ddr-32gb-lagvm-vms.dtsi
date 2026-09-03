@@ -28,8 +28,8 @@
 
 &{/reserved-memory} {
 
-	auto_vm_0_mem_1: auto_vm_0_mem_1@BA9000000 {
+	auto_vm_0_mem_1: auto_vm_0_mem_1@BD5000000 {
 		no-map;
-		reg = <0xB 0xA9000000 0x2 0xE7000000>; /* 11888MB */
+		reg = <0xB 0xD5000000 0x2 0xBB000000>; /* 11184MB */
 	};
 };
