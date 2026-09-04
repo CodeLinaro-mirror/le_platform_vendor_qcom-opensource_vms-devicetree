@@ -4,7 +4,7 @@
 */
 
 #include <dt-bindings/interrupt-controller/arm-gic.h>
-#include "sa8797-vms-common.dtsi"
+#include "sa8x97p-vms-common.dtsi"
 
 &soc {
 	gh_vm_resources {
