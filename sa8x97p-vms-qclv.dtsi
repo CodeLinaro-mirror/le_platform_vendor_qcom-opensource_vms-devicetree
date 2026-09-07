@@ -3,6 +3,7 @@
 * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 */
 
+#include <dt-bindings/gpio/gpio.h>
 #include "sa8x97p-vms-lv.dtsi"
 
 &{/soc@0/scmi_uart17} {
@@ -51,4 +52,21 @@
 
 &{/soc@0/geniqup@8c0000/serial@88c000} {
 	status = "ok";
+};
+
+&{/soc@0/pinctrl@f000000} {
+	pcie2_rc_wake_default: pcie2-rc-wake-default-state {
+		pins = "gpio6";
+		function = "gpio";
+		drive-strength = <2>;
+		bias-pull-up;
+		input-enable;
+	};
+};
+
+&{/pci@0x4000000000/pcie@2} {
+	pinctrl-names = "default";
+	pinctrl-0 = <&pcie2_rc_wake_default>;
+	wake-gpios = <&tlmm 6 GPIO_ACTIVE_LOW>;
+	wakeup-source;
 };
