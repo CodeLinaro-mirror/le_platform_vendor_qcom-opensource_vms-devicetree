@@ -15,8 +15,3 @@
 &{/} {
 	qcom,sku-id = <0x2 0x202>;
 };
-
-&non_ecc_heap_mem {
-	reg = <0x88 0x00000000 0x5 0x80000000>;
-	status = "okay";
-};

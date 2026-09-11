@@ -9,7 +9,7 @@
 #include "sa8x97p-flex-ddr-48gb-lagvm-vms.dtsi"
 
 / {
-	compatible = "qcom,sa8x97p-flex-adp-star", "qcom,sa8x97p-flex-ride-sx";
+	compatible = "qcom,sa8x97p-flex-ride-sx";
 };
 
 &{/} {
