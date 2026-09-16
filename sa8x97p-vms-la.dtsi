@@ -548,6 +548,7 @@
 	dice_vm_0_mem: dice_vm_0_mem@8083F000 {
 		no-map;
 		reg = <0x0 0x8083F000 0x0 0x1000>;
+		qcom,is-shared;
 		gunyah-label = <0x67>;
 	};
 
