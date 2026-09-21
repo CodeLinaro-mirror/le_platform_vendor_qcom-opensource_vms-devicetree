@@ -477,6 +477,12 @@
 		interrupt-names = "qcom,qtmr-intr";
 		qcom,primary;
 	};
+
+	named_dmabuf_qcipc_gvm: named_dmabuf_qcipc_gvm {
+		compatible = "qcom,named-dmabuf";
+		instance-name = "qcipc_gvm";
+		memory-region = <&qcipc_gvm_mem>;
+	};
 };
 
 &soccp_fe_vm_1 {
