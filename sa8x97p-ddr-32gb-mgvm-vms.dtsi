@@ -15,12 +15,12 @@
 				&vm_0_glink_cma_mem_5
 				&vm_0_glink_cma_mem_6
 				&vm_0_glink_cma_mem_7
-				&vm_cp_pixel
-				&vm_cp_nonpixel
-				&vm_cp_bitstream
-				&vm_cp_b_pt_mem
-				&vm_cp_p_pt_mem
-				&vm_cp_np_pt_mem
+				&vm_0_cp_pixel
+				&vm_0_cp_nonpixel
+				&vm_0_cp_bitstream
+				&vm_0_cp_b_pt_mem
+				&vm_0_cp_p_pt_mem
+				&vm_0_cp_np_pt_mem
 				&soccp_fe_vm_1
 				&dice_vm_0_mem>;
 	};
@@ -33,15 +33,21 @@
 				&vm_1_glink_cma_mem_4
 				&vm_1_glink_cma_mem_5
 				&vm_1_glink_cma_mem_6
-				&vm_1_glink_cma_mem_7>;
+				&vm_1_glink_cma_mem_7
+				&vm_1_cp_pixel
+				&vm_1_cp_nonpixel
+				&vm_1_cp_bitstream
+				&vm_1_cp_b_pt_mem
+				&vm_1_cp_p_pt_mem
+				&vm_1_cp_np_pt_mem>;
 	};
 };
 
 &{/reserved-memory} {
 
-	auto_vm_0_mem_1: auto_vm_0_mem_1@BA9000000 {
+	auto_vm_0_mem_1: auto_vm_0_mem_1@BD5000000 {
 		no-map;
-		reg = <0xB 0xA9000000 0x2 0xE7000000>; /* 11888MB */
+		reg = <0xB 0xD5000000 0x2 0xBB000000>; /*11184MB*/
 	};
 
 	auto_vm_1_mem_2: auto_vm_1_mem_2@E90000000 {

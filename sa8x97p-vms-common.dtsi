@@ -12,7 +12,14 @@
 	hab: qcom,hab {
 		compatible = "qcom,hab";
 		vmid = <0>;
-		virt-irq = <0x4 0x5 0x6>;
+
+		virqgrp: virqgrp {
+			virq0: virq0 {
+				index = <0>;
+				label = <0x5 0x6 0x9 0xA 0xB 0xC>;
+				remote-vmids = <2>;
+			};
+		};
 
 		mmidgrp100: mmidgrp100 {
 			grp-start-id = <100>;

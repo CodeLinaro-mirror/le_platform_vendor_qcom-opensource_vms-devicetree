@@ -9,5 +9,9 @@
 #include "sa8x97p-ddr-32gb-lagvm-vms.dtsi"
 
 / {
-	compatible = "qcom,sa8x97p-ride-sx", "qcom,sa8x97p-qam-ride-sx";
+	compatible = "qcom,sa8x97p-adp-star", "qcom,sa8x97p-ride-sx", "qcom,sa8x97p-qam-ride-sx";
+};
+
+&{/} {
+	qcom,sku-id = <0x0 0x200>;
 };

@@ -24,8 +24,8 @@
 		reg = <0xE 0x90000000 0x1 0x4E300000>; /*5347MB*/
 	};
 
-	auto_vm_1_mem_3: auto_vm_1_mem_3@BA9000000 {
+	auto_vm_1_mem_3: auto_vm_1_mem_3@BD5000000 {
 		no-map;
-		reg = <0xB 0xA9000000 0x1 0x00000000>; /*4096MB*/
+		reg = <0xB 0xD5000000 0x1 0x00000000>; /*4096MB*/
 	};
 };

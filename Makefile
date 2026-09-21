@@ -1,8 +1,5 @@
 # SPDX-License-Identifier: GPL-2.0
 
-# VMS layout header DTB (offsets patched at build time)
-dtb-y += vms-header.dtb
-
 # VMS DDR mgvm overlays
 dtb-y += sa8x97p-ddr-32gb-mgvm-overlay.dtbo
 dtb-y += sa8x97p-ddr-48gb-mgvm-overlay.dtbo
