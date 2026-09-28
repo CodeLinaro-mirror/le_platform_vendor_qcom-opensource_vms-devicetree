@@ -9,7 +9,7 @@
 #include "sa8x97p-ddr-48gb-lagvm-vms.dtsi"
 
 / {
-	compatible = "qcom,sa8x97p-ride-sx", "qcom,sa8x97p-qam-ride-sx";
+	compatible = "qcom,sa8x97p-ride-sx", "qcom,sa8x97p-qam-ride-sx", "qcom,sa8797p-iqx-evk";
 };
 
 &{/} {
