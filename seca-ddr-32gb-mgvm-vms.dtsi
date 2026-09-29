@@ -24,18 +24,24 @@
 
 	gh-secure-vm-loader@1 {
 		memory-region = <&auto_vm_1_mem_0 &auto_vm_1_mem_1 &auto_vm_1_mem_2>;
+		shared-regions = <&vm_1_cp_pixel
+				&vm_1_cp_nonpixel
+				&vm_1_cp_bitstream
+				&vm_1_cp_b_pt_mem
+				&vm_1_cp_p_pt_mem
+				&vm_1_cp_np_pt_mem>;
 	};
 };
 
 &{/reserved-memory} {
 
-	auto_vm_0_mem_1: auto_vm_0_mem_1@BA9000000 {
+	auto_vm_0_mem_1: auto_vm_0_mem_1@BD5000000 {
 		no-map;
-		reg = <0xB 0xA9000000 0x2 0xE7000000>; /* 11888MB */
+		reg = <0xB 0xD5000000 0x2 0xBB000000>; /* 11184MB */
 	};
 
 	auto_vm_1_mem_2: auto_vm_1_mem_2@8E0000000 {
 		no-map;
-		reg = <0x8 0xe0000000 0x0 0x80000000>; /* 2GB */
+		reg = <0x8 0xe0000000 0x0 0x60000000>; /* 2GB */
 	};
 };
