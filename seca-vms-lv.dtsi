@@ -44,14 +44,16 @@
 				&auto_vm1_input1_ring
 				&auto_vm1_vconsole_ring
 				&auto_vm1_i2c0_ring
+				&auto_vm1_ssr_ring
 				&auto_vm1_vscmi_ring
 				&auto_vm1_vblk20_ring
 				&auto_vm1_vblk21_ring
 				&auto_vm1_vhab9_ring
 				&auto_vm1_vhab10_ring
 				&auto_vm1_vhab11_ring
-				&auto_vm1_resv0_ring
-				&auto_vm1_resv1_ring
+				&auto_vm1_glink_lv_ring
+				&auto_vm1_frpc_ring
+				&auto_vm1_resv_ring
 				&auto_vm1_swiotlb>;
 	};
 
@@ -270,9 +272,14 @@
 		qcom,label = <0x12A>;
 	};
 
-	auto_vm1_be43: auto_vm1_be43@140 {
+	auto_vm1_be43: auto_vm1_be43@12B {
 		qcom,vm = <&auto_vm1>;
-		qcom,label = <0x140>;
+		qcom,label = <0x12B>;
+	};
+
+	auto_vm1_be44: auto_vm1_be44@12C {
+		qcom,vm = <&auto_vm1>;
+		qcom,label = <0x12C>;
 	};
 
 	auto_vm_1: gh-secure-vm-loader@1 {
@@ -325,7 +332,8 @@
 				&auto_vm1_be40
 				&auto_vm1_be41
 				&auto_vm1_be42
-				&auto_vm1_be43>;
+				&auto_vm1_be43
+				&auto_vm1_be44>;
 	};
 };
 
@@ -589,18 +597,32 @@
 		gunyah-label = <0x128>;
 	};
 
-	/* resv0: 0xB6326E000, 0x8000 */
-	auto_vm1_resv0_ring: auto_vm1_resv0_ring@b6326e000 {
+	/* ssr: 0xB6326E000, 0x2000 */
+	auto_vm1_ssr_ring: auto_vm1_ssr_ring@b6326e000 {
 		no-map;
-		reg = <0xB 0x6326E000 0x0 0x8000>;
+		reg = <0xB 0x6326E000 0x0 0x2000>;
 		gunyah-label = <0x129>;
 	};
 
-	/* resv1: 0xB63276000, 0xE8A000 */
-	auto_vm1_resv1_ring: auto_vm1_resv1_ring@b63276000 {
+	/* glink_lv: 0xB63270000, 0x2000 */
+	auto_vm1_glink_lv_ring: auto_vm1_glink_lv_ring@b63270000 {
+		no-map;
+		reg = <0xB 0x63270000 0x0 0x2000>;
+		gunyah-label = <0x12A>;
+	};
+
+	/* frpc: 0xB63272000, 0x4000 */
+	auto_vm1_frpc_ring: auto_vm1_frpc_ring@b63272000 {
+		no-map;
+		reg = <0xB 0x63272000 0x0 0x4000>;
+		gunyah-label = <0x12B>;
+	};
+
+	/* resv: 0xB63276000, 0xE8A000 */
+	auto_vm1_resv_ring: auto_vm1_resv_ring@b63276000 {
 		no-map;
 		reg = <0xB 0x63276000 0x0 0xE8A000>;
-		gunyah-label = <0x12A>;
+		gunyah-label = <0x12C>;
 	};
 
 	/* swiotlb: 0xB64100000, 0xF00000 (15MB) */
