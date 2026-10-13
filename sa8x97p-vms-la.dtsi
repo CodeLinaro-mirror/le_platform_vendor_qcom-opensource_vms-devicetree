@@ -469,6 +469,12 @@
 		qcom,primary;
 	};
 
+	qcom,test-msi {
+		compatible = "qcom,msi-test";
+		msi-parent = <&gic_its 0x0>;
+		qcom,msi-test-64;
+	};
+
 	qcom,gh-qtimer@17C25000 {
 		compatible = "qcom,gh-qtmr";
 		reg = <0x0 0x17C25000 0x0 0x1000>;
