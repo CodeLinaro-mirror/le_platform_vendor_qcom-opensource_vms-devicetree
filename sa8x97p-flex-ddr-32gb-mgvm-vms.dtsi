@@ -23,7 +23,10 @@
 				&vm_0_cp_p_pt_mem
 				&vm_0_cp_np_pt_mem
 				&soccp_fe_vm_1
-				&dice_vm_0_mem>;
+				&dice_vm_0_mem
+				&qcipc_pvm_safe_mem
+				&qcipc_pvm_nonsafe_mem
+				&qcipc_gvm_mem>;
 	};
 
 	gh-secure-vm-loader@1 {
@@ -45,10 +48,17 @@
 };
 
 &{/reserved-memory} {
-
-	auto_vm_0_mem_1: auto_vm_0_mem_1@BD5000000 {
+	qcipc_gvm_mem: qcipc_gvm_mem@BD5000000 {
+		compatible = "shared-dma-pool";
+		reg = <0xB 0xD5000000 0x0 0x02000000>;
 		no-map;
-		reg = <0xB 0xD5000000 0x2 0xBB000000>; /*11184MB*/
+		gunyah-label = <0x94>;
+		qcom,is-shared;
+	};
+
+	auto_vm_0_mem_1: auto_vm_0_mem_1@BD7000000 {
+		no-map;
+		reg = <0xB 0xD7000000 0x2 0xB9000000>; /*11152MB*/
 	};
 
 	auto_vm_1_mem_2: auto_vm_1_mem_2@E90000000 {

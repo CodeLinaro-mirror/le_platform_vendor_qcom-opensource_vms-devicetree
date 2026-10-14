@@ -27,10 +27,17 @@
 };
 
 &{/reserved-memory} {
-
-	auto_vm_0_mem_1: auto_vm_0_mem_1@BA9000000 {
+	qcipc_gvm_mem: qcipc_gvm_mem@BA9000000 {
+		compatible = "shared-dma-pool";
+		reg = <0xB 0xA9000000 0x0 0x02000000>;
 		no-map;
-		reg = <0xB 0xA9000000 0x4 0x57000000>; /* 17776MB */
+		gunyah-label = <0x94>;
+		qcom,is-shared;
+	};
+
+	auto_vm_0_mem_1: auto_vm_0_mem_1@BAB000000 {
+		no-map;
+		reg = <0xB 0xAB000000 0x4 0x55000000>; /* 17744MB */
 	};
 
 	auto_vm_0_mem_2: auto_vm_0_mem_2@8D80000000 {
