@@ -12,6 +12,10 @@
 	compatible = "qcom,sa8x97p-flex-ride-sx";
 };
 
+&{/} {
+	qcom,sku-id = <0x302>;
+};
+
 &non_ecc_heap_mem {
 	reg = <0xA 0x20000000 0x1 0x40000000>;
 	status = "okay";
