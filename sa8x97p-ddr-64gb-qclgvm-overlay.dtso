@@ -11,7 +11,3 @@
 / {
 	compatible = "qcom,sa8x97p-adp-star", "qcom,sa8x97p-ride-sx", "qcom,sa8797p-iqx-evk";
 };
-
-&{/} {
-	qcom,sku-id = <0xf 0x20f>;
-};
