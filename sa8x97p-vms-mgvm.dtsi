@@ -5,6 +5,20 @@
 #include "sa8x97p-vms-la.dtsi"
 #include "sa8x97p-vms-lv.dtsi"
 
+&virqgrp {
+	virq0 {
+		index = <0>;
+		label = <0x5 0x6 0x9 0xA 0xB 0xC>;
+		remote-vmids = <2>;
+	};
+
+	virq1 {
+		index = <1>;
+		label = <0xD 0xE 0xF>;
+		remote-vmids = <3>;
+	};
+};
+
 &mmidgrp100 {
 	remote-vmids = <2 3>;
 };
