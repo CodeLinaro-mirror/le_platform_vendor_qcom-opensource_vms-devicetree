@@ -1,5 +1,3 @@
-# SPDX-License-Identifier: GPL-2.0
-
 # VMS DDR mgvm overlays
 dtb-y += sa8x97p-ddr-32gb-mgvm-overlay.dtbo
 dtb-y += sa8x97p-ddr-48gb-mgvm-overlay.dtbo
